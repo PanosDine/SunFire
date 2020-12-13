@@ -1,0 +1,87 @@
+#main {
+    padding-top: 74px;
+}
+
+@media (min-width: 992px) {
+    #main {
+      padding-top: 104px;
+    }
+}
+
+@font-face {
+    font-family: "Sunfire Font";
+    src:
+    url("fonts\montserratalternates-light-webfont.woff") format("woff"),
+    url("fonts\MontserratAlternates-Light.otf") format("opentype"),
+}
+
+.navbar-brand {
+    font-family: "Sunfire Font";
+}
+
+.sf-bg-primary {
+    background-color: #983352;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link{
+    border-bottom: 2px solid transparent;
+    transition: border-bottom .2s, color .2s;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link:hover{
+    color: #983352;
+    border-color: #983352;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link.active{
+    background: none;
+    color:white;
+    border-color: #983352;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link.active:hover{
+    background: none;
+    color: #983352;
+}
+
+.mastehead .masthead-avatar {
+    width: 170px;
+    height: 170px;
+}
+
+.masthead {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+@media (min-width: 992px) {
+    .masthead {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+}
+
+.masthead {
+    background-image: url("../img/image-big-heavy-explosion-600w-100615327.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.bi.bi-instagram {
+    color: black;
+}
+
+.bi.bi-twitter {
+    color: black;
+}
+
+.bi.bi-facebook {
+    color: black;
+}
+
+.bi.bi-linkedin {
+    color: black;
+}
+
+p a + a {
+    padding-left: 1em;
+ } 

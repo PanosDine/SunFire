@@ -1,0 +1,7 @@
+#Everything the dev needs in addition to the production requirements
+#pip install -r requirements/dev.txt
+
+-r prod.txt
+
+black==19.10b0
+mypy==0.782
