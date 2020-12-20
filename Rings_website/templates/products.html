@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Proucts{% endblock %}
+
+{% block content %}
+<h1>
+    Explore our products
+</h1>
+{% if jewel_list %}
+    <div class="row" id="product_page_background">
+        {% for jewel in jewel_list %}                
+            <div class="column">
+                <figure id="product_page_figures">            
+                    <!--<a href="{{ jewel.get_absolute_url }}">{{ jewel.title }}</a>-->
+                    <img src="{{ jewel.image.url }}" width="100%" alt="{{ jewel.title }}">
+                    <figcaption>{{ jewel.title }}<br>
+                        £{{jewel.price}}
+                        <br>
+                        {{jewel.description}}          
+                    </figcaption>
+                </figure>                             
+                <br>
+            </div>
+        {% endfor %}    
+    </div>
+{% else %}
+    <p>There are no jewels in stock.</p>
+{% endif %}
+{% endblock %}

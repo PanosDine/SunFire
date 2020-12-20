@@ -9,10 +9,10 @@
 {% block bodyclass %}{{ block.super }} login{% endblock %}
 
 {% block usertools %}{% endblock %}
-
 {% block nav-global %}{% endblock %}
 
 {% block nav-sidebar %}{% endblock %}
+
 
 {% block content_title %}{% endblock %}
 
@@ -20,6 +20,7 @@
 
 
 {% block content %}
+
 {% if form.errors and not form.non_field_errors %}
 <p class="errornote">
 {% if form.errors.items|length == 1 %}{% translate "Please correct the error below." %}{% else %}{% translate "Please correct the errors below." %}{% endif %}
@@ -61,8 +62,9 @@
     <a href="{{ password_reset_url }}">{% translate 'Forgotten your password or username?' %}</a>
   </div>
   {% endif %}
-  <div class="submit-row">
-    <input type="submit" value="{% translate 'Log in' %}">
+  <div style="text-align: center">
+    <input type="submit" id = "loginbutton" value="{% translate 'Log in' %}">
+    <input type="submit" id = "gobackbutton" onclick="location.href='../../../../';" value="Back">
   </div>
 </form>
 

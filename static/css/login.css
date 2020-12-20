@@ -1,0 +1,15 @@
+#outer {
+    text-align: center;
+}
+
+.submit-row {
+    text-align: center;
+}
+
+#loginbutton {
+    display: inline-block;
+}
+
+#gobackbutton {
+    display: inline-block;
+}

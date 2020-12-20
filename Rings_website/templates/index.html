@@ -1,19 +1,41 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Sun Fire{% endblock %}
+
+{% block title %}Sunfire{% endblock %}
 
 {% block content %}
 <!-- Masthead-->
     <header class="masthead text-white text-center">
         <div class="container d-flex align-items-center flex-column">
             <!-- Masthead Avatar Image-->
-            <img class="masthead-avatar mb-5" src="{% static 'img/logo.jpg' %}" alt="" />
+            <img class="masthead-avatar mb-5" src="{% static 'img/logo2.png' %}" alt="" />
             <!-- Masthead Heading-->
             <h1 class="masthead-heading text-uppercase mb-0">For impotant moments, with important people</h1>
+                        
         </div>
     </header>
-<h1>
-    Home
-</h1>
+<br>  
+    <h2>Find what you're looking for<br>Have a look at our <a href="/products/">treasures</h2>
+        <div class="row">
+            <div class="column">
+                <figure>            
+                    <img src="static/img/ring.jpg" width="100%" alt="">
+                        <figcaption>Necklaces</figcaption>
+                </figure>
+            </div>
+            <div class="column">
+                <figure>
+                    <img src="static/img/diamonds.jpg" width="100%" alt="">
+                        <figcaption>Rings</figcaption>
+                </figure>
+            </div>
+            <div class="column">    
+                <figure>
+                    <img src="static/img/bracelet.jpg" width="100%" alt="">
+                        <figcaption>Bracelets</figcaption>
+                </figure>
+            </div>
+        </div>
+    
 {% endblock %}

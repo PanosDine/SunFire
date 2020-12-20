@@ -45,8 +45,8 @@
 }
 
 .mastehead .masthead-avatar {
-    width: 170px;
-    height: 170px;
+    width: 140px;
+    height: 150px;
 }
 
 .masthead {
@@ -61,9 +61,13 @@
 }
 
 .masthead {
-    background-image: url("../img/image-big-heavy-explosion-600w-100615327.png");
+    background-image: url("../img/bg.jpg");
     background-repeat:no-repeat;
     background-size: cover;
+}
+
+.masthead-heading{
+    color: black;
 }
 
 .bi.bi-instagram {
@@ -84,4 +88,102 @@
 
 p a + a {
     padding-left: 1em;
- } 
+}
+
+#outer {
+    text-align: center;
+}
+
+.submit-row {
+    text-align: center;
+}
+
+#loginbutton {
+    display: inline-block;
+}
+
+#gobackbutton {
+    display: inline-block;
+}
+
+figure {
+    border: thin #c0c0c0 solid;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    max-width: 412px;
+    margin: auto;
+}
+
+img {
+    max-width: 410px;
+    height: 250px;
+}
+
+figcaption {
+    background-color: rgb(231, 231, 231);
+    color: rgb(19, 18, 18);
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
+
+#product_page_background{
+    background-image: url("../img/bg.jpg");
+    background-repeat:no-repeat;
+    background-size:cover
+}
+#product_page_figures {
+    border: thin #c0c0c0 solid;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    max-width: 312px;
+    margin: auto;
+}
+
+#product_page_figures img {
+    max-width: 310px;
+    max-height: 140px;
+}
+.row {
+    padding: 5%;
+
+}
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media screen and (max-width: 500px) {
+    .column {
+        width: 100%;
+    }
+}
+
+h1 {
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+h2 {
+    text-align: center;
+}
+
+a {
+    color: rgb(189, 129, 0);
+    
+}
+
+a:hover {
+    color: rgb(179, 122, 2);
+    text-decoration: none;
+}

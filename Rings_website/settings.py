@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Rings_website.apps.accounts',
-    'Rings_website.apps.contact'
+    'Rings_website.apps.contact',
+    'Rings_website.apps.products'
 ]
 
 MIDDLEWARE = [
@@ -134,15 +134,18 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
 
+#MEDIA_ROOT = BASE_DIR
+#MEDIA_URL = '/img/'
+
 # Django Auth Settings
-LOGIN_URL = "accounts:login"
+#LOGIN_URL = "accounts:login"
 LOGIN_REDIRECT_URL = "public:index"
 LOGOUT_REDIRECT_URL = "public:index"
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-DEFAULT_FROM_EMAIL = "unfazed.md@gmail.com"
+DEFAULT_FROM_EMAIL = "youremail"
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
+EMAIL_HOST_PASSWORD = 'yourapikey'
 EMAIL_PORT = 587 
 EMAIL_USE_TLS = True 

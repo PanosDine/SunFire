@@ -16,13 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-
+from . import settings
 from . import views
+from django.contrib.staticfiles.urls import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Rings_website.apps.public.urls')),
-    path('accounts/', include('Rings_website.apps.accounts.urls')),
-    path("contact/", include('Rings_website.apps.contact.urls')),
+    path('contact/', include('Rings_website.apps.contact.urls')),
+    path('products/', include('Rings_website.apps.products.urls')),
 ]
 
+#urlpatterns += staticfiles_urlpatterns()
+#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
