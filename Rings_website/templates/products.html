@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Proucts{% endblock %}
+{% block title %}Products{% endblock %}
 
 {% block content %}
 <h1>
     Explore our products
 </h1>
+<!--Displays all products (instances of the Jewel class) in 3 columns per row-->
+
 {% if jewel_list %}
     <div class="row" id="product_page_background">
         {% for jewel in jewel_list %}                
             <div class="column">
                 <figure id="product_page_figures">            
-                    <!--<a href="{{ jewel.get_absolute_url }}">{{ jewel.title }}</a>-->
                     <img src="{{ jewel.image.url }}" width="100%" alt="{{ jewel.title }}">
                     <figcaption>{{ jewel.title }}<br>
                         £{{jewel.price}}
@@ -22,9 +23,9 @@
                 </figure>                             
                 <br>
             </div>
-        {% endfor %}    
-    </div>
+        {% endfor %} 
+    </div>   
 {% else %}
-    <p>There are no jewels in stock.</p>
+    <div>There are no jewels in stock.</div>
 {% endif %}
 {% endblock %}

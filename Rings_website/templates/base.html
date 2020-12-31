@@ -1,3 +1,6 @@
+<!--A basic template which is inherited by every other template
+in the directory-->
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -34,5 +37,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="{% static 'theme/js/scripts.js' %}"></script>
+
 </body>
+{% include 'footer.html'%}
 </html>

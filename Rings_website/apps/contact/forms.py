@@ -1,5 +1,6 @@
 from django import forms
 
+#a simple form for the 'contact us' page
 class ContactForm(forms.Form):
     name = forms.CharField(required=True, widget=forms.TextInput(attrs=
     {'class': 'form-control', 'placeholder': "Name"}))

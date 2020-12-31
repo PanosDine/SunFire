@@ -27,7 +27,4 @@ urlpatterns = [
     path('', include('Rings_website.apps.public.urls')),
     path('contact/', include('Rings_website.apps.contact.urls')),
     path('products/', include('Rings_website.apps.products.urls')),
-]
-
-#urlpatterns += staticfiles_urlpatterns()
-#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 

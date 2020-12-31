@@ -21,13 +21,32 @@ PROJECT_DIR = os.path.join(BASE_DIR, "Rings_website")
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'a&^my78o-+s5)hw$kfxev4gjq$gn^o6f0amqx@j0@f^3^g3mb5'
 
+
+"""During development no environment variable will be specified for
+ the key, so the default value will be used (it shouldn't matter 
+ what key you use here, or if the key "leaks", because you won't 
+ use it in production)."""
+import os
+
+SECRET_KEY = os.environ['SECRET_KEY', 'changeme']
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
+"""The value of the DEBUG will be True by default, but will only be 
+False if the value of the DJANGO_DEBUG environment variable is set 
+to False. Please note that environment variables are strings and 
+not Python types. We therefore need to compare strings. The only way
+to set the DEBUG variable to False is to actually set it to the 
+string False. You can set the environment variable to False by 
+issuing the following command:"""
+#export DJANGO_DEBUG=False
+#DEBUG = bool(int(os.environ.get('DEBUG', 0)))
+#DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = []
-
+"""ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
+if ALLOWED_HOSTS_ENV:
+    ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))"""
 
 # Application definition
 
@@ -128,14 +147,16 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
+STATIC_URL = '/static/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
 
-#MEDIA_ROOT = BASE_DIR
-#MEDIA_URL = '/img/'
+STATIC_ROOT = '/vol/web/static'
+MEDIA_ROOT = '/vol/web/media'
+
+MEDIA_URL = '/static/media/'
 
 # Django Auth Settings
 #LOGIN_URL = "accounts:login"
@@ -143,9 +164,9 @@ LOGIN_REDIRECT_URL = "public:index"
 LOGOUT_REDIRECT_URL = "public:index"
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-DEFAULT_FROM_EMAIL = "youremail"
+DEFAULT_FROM_EMAIL = "unfazed.md@gmail.com"
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = 'yourapikey'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587 
 EMAIL_USE_TLS = True 

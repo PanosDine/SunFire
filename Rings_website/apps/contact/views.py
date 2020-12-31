@@ -6,6 +6,9 @@ from Rings_website import settings
 
 from .forms import ContactForm
 
+
+"""Does a validation test and sends an email when it's requested
+to post the data. Bleach to clean the data"""
 def contact(request: HttpRequest) -> HttpResponse:
 
     if request.method == "GET":

@@ -9,14 +9,20 @@
 }
 
 @font-face {
-    font-family: "Sunfire Font";
-    src:
-    url("fonts\montserratalternates-light-webfont.woff") format("woff"),
-    url("fonts\MontserratAlternates-Light.otf") format("opentype"),
+    font-family: 'alex_brushregular';
+    src: url('../fonts/alexbrush-regular-otf-webfont.eot');
+    src: url('../fonts/alexbrush-regular-otf-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/alexbrush-regular-otf-webfont.woff2') format('woff2'),
+         url('../fonts/alexbrush-regular-otf-webfont.woff') format('woff'),
+         url('../fonts/alexbrush-regular-otf-webfont.ttf') format('truetype'),
+         url('../fonts/alexbrush-regular-otf-webfont.svg#alex_brushregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 .navbar-brand {
-    font-family: "Sunfire Font";
+    /*font-family: "alex_brushregular";*/
 }
 
 .sf-bg-primary {
@@ -112,7 +118,7 @@ figure {
     flex-flow: column;
     padding: 5px;
     max-width: 412px;
-    margin: auto;
+    margin: 1%;
 }
 
 img {
@@ -133,27 +139,41 @@ figcaption {
     background-repeat:no-repeat;
     background-size:cover
 }
+
+#about_page_background{
+    background: url("../img/bg3.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    min-height:1200px;
+    font-size:xx-large;
+    text-align: center;
+    /*font-family:"alex_brushregular";*/
+}
+
 #product_page_figures {
     border: thin #c0c0c0 solid;
     display: flex;
     flex-flow: column;
-    padding: 5px;
+    padding: 3px;
     max-width: 312px;
-    margin: auto;
+
 }
 
 #product_page_figures img {
     max-width: 310px;
     max-height: 140px;
 }
+
 .row {
-    padding: 5%;
+    padding: 6%;
+    margin:0px;
+    min-width:100%;
+    max-width:100%;
 
 }
 .column {
-    float: left;
     width: 33.33%;
-    padding: 5px;
+    padding: 10px;
 }
 
 .row::after {
@@ -172,6 +192,8 @@ h1 {
     text-align: center;
     padding-top: 1%;
     padding-bottom: 1%;
+    margin: 0%;
+
 }
 
 h2 {
@@ -186,4 +208,12 @@ a {
 a:hover {
     color: rgb(179, 122, 2);
     text-decoration: none;
+}
+
+
+footer {
+    margin: 0;
+    padding:0;
+    background-color: lavender;
+    text-align: center;
 }

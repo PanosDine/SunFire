@@ -1,5 +1,6 @@
 from django.db import models
 
+"""Simple model for the product being sold (jewelry)"""
 class Jewel(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=500)

@@ -1,7 +1,8 @@
 {% extends "admin/base_site.html" %}
 {% load i18n static %}
 
-
+<!--Just added an extra button to the default django admin login
+page that takes the user back to the website (line 68)-->
 {% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/login.css" %}">
 {{ form.media }}
 {% endblock %}
