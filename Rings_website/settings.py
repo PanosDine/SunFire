@@ -29,7 +29,7 @@ PROJECT_DIR = os.path.join(BASE_DIR, "Rings_website")
  use it in production)."""
 import os
 
-SECRET_KEY = os.environ['SECRET_KEY', 'changeme']
+#SECRET_KEY = os.environ['SECRET_KEY', 'changeme']
 # SECURITY WARNING: don't run with debug turned on in production!
 
 """The value of the DEBUG will be True by default, but will only be 
@@ -164,9 +164,9 @@ LOGIN_REDIRECT_URL = "public:index"
 LOGOUT_REDIRECT_URL = "public:index"
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-DEFAULT_FROM_EMAIL = "unfazed.md@gmail.com"
+DEFAULT_FROM_EMAIL = "***"
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = '*****'
 EMAIL_PORT = 587 
 EMAIL_USE_TLS = True 
