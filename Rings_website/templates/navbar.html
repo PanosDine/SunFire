@@ -1,5 +1,5 @@
 {% url 'public:index' as index_url %}
-{% url 'products:products' as products_url %}
+{% url 'public:about' as about_url %}
 {% url 'contact:contact' as contact_url %}
 
 
@@ -13,9 +13,8 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 js-scroll-trigger {% if request.path == index_url %}active{% endif %}" href="{{ index_url }}">Home </a></li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 js-scroll-trigger {% if request.path == products_url %}active{% endif %}" href="{{ products_url }}">Products</a></li>    
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 js-scroll-trigger {% if request.path == about_url %}active{% endif %}" href="{{ about_url }}">About</a></li>    
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 js-scroll-trigger {% if request.path == contact_url %}active{% endif %}" href="{{ contact_url }}">Contact </a></li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 js-scroll-trigger" href="../admin">Admin</a></li>
             </ul>
         </div>
     </div>
