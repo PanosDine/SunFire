@@ -29,6 +29,7 @@ PROJECT_DIR = os.path.join(BASE_DIR, "Rings_website")
  use it in production)."""
 import os
 
+SECRET_KEY = '***'
 #SECRET_KEY = os.environ['SECRET_KEY', 'changeme']
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -42,6 +43,8 @@ issuing the following command:"""
 #export DJANGO_DEBUG=False
 #DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 #DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+
+DEBUG = True
 
 ALLOWED_HOSTS = []
 """ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
@@ -147,8 +150,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-#STATIC_URL = '/static/'
-STATIC_URL = '/static/static/'
+STATIC_URL = '/static/'
+#STATIC_URL = '/static/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
@@ -156,10 +159,10 @@ STATICFILES_DIRS = [
 STATIC_ROOT = '/vol/web/static'
 MEDIA_ROOT = '/vol/web/media'
 
-MEDIA_URL = '/static/media/'
+#MEDIA_URL = '/static/media/'
 
 # Django Auth Settings
-#LOGIN_URL = "accounts:login"
+
 LOGIN_REDIRECT_URL = "public:index"
 LOGOUT_REDIRECT_URL = "public:index"
 
@@ -167,6 +170,6 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 DEFAULT_FROM_EMAIL = "***"
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '*****'
+EMAIL_HOST_PASSWORD = '***'
 EMAIL_PORT = 587 
 EMAIL_USE_TLS = True 
