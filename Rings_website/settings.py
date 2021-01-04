@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os.path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_DIR = os.path.join(BASE_DIR, "Rings_website")
@@ -29,8 +30,7 @@ PROJECT_DIR = os.path.join(BASE_DIR, "Rings_website")
  use it in production)."""
 import os
 
-SECRET_KEY = '*******'
-#SECRET_KEY = os.environ['SECRET_KEY', 'changeme']
+SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 
 """The value of the DEBUG will be True by default, but will only be 
@@ -42,11 +42,19 @@ string False. You can set the environment variable to False by
 issuing the following command:"""
 
 DEBUG = True
+#DEBUG = False
 
+"""example allowed hosts
+ALLOWED_HOSTS = [
+    '.coffeehouse.com',
+    '.bestcoffeehouse.com',
+]
+"""
 ALLOWED_HOSTS = []
-"""ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
+
+ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
 if ALLOWED_HOSTS_ENV:
-    ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))"""
+    ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))
 
 # Application definition
 
@@ -154,9 +162,9 @@ STATICFILES_DIRS = [
 ]
 
 #STATIC_ROOT = '/vol/web/static'
-#MEDIA_ROOT = '/vol/web/media'
+MEDIA_ROOT = '/vol/web/media'
 
-#MEDIA_URL = '/static/media/'
+MEDIA_URL = '/media/'
 
 # Django Auth Settings
 LOGIN_REDIRECT_URL = "public:index"
@@ -166,6 +174,10 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 DEFAULT_FROM_EMAIL = "unfazed.md@gmail.com"
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '*******'
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 EMAIL_PORT = 587 
 EMAIL_USE_TLS = True 
+
+#Cookie settings
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True

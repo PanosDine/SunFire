@@ -1,16 +1,21 @@
 version: "3.7"
 
+
 x-service-volumes: &service-volumes
   - ./:/app/:rw,cached
 
 x-database-variables: &database-variables
-  POSTGRES_DB: ***
-  POSTGRES_USER: ***
-  POSTGRES_PASSWORD: ***
+  POSTGRES_DB: "${DB_NAME}"
+  POSTGRES_USER: "${DB_USER}"
+  POSTGRES_PASSWORD: "${DB_PW}"
 
 x-app-variables: &app-variables
   <<: *database-variables
-  POSTGRES_HOST: postgres
+  POSTGRES_HOST: "${DB_HOST}"
+  SECRET_KEY: "${SECRET_KEY}"
+  EMAIL_HOST_PASSWORD: "${EMAIL_HOST_PASSWORD}"
+  ALLOWED_HOSTS: "${ALLOWED_HOSTS}"
+
 
 services:
   website:
